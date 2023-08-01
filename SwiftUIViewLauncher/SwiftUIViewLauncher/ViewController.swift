@@ -12,16 +12,14 @@ class ViewController: NSViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    // Init view
   }
   
-  override func viewDidAppear() {
-    
-  }
+  
+  // MARK: Demo IBActions
   
   @IBAction func presentDemoViewAsSheetButtonAction(_ sender: NSButton) {
     present(.demoView, as: .sheet)
-    
   }
   
   @IBAction func presentDemoViewAsWindowButtonAction(_ sender: NSButton) {
@@ -33,11 +31,5 @@ class ViewController: NSViewController {
     present(.demoView, as: .popover)
   }
   
+  
 }
-
-
-
-
-
-
-
