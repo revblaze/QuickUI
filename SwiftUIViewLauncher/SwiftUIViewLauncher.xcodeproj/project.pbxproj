@@ -12,6 +12,9 @@
 		C284874F2A79526800210E68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C284874E2A79526800210E68 /* Assets.xcassets */; };
 		C28487522A79526800210E68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C28487502A79526800210E68 /* Main.storyboard */; };
 		C284875C2A79532300210E68 /* DemoSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C284875B2A79532300210E68 /* DemoSheetView.swift */; };
+		C284875F2A79706D00210E68 /* SwiftUIViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C284875E2A79706D00210E68 /* SwiftUIViews.swift */; };
+		C28487612A7970BB00210E68 /* SwiftUIViewPresentationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28487602A7970BB00210E68 /* SwiftUIViewPresentationType.swift */; };
+		C28487632A7970DE00210E68 /* NSViewController+Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28487622A7970DE00210E68 /* NSViewController+Present.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		C28487512A79526800210E68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C28487532A79526800210E68 /* SwiftUIViewLauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftUIViewLauncher.entitlements; sourceTree = "<group>"; };
 		C284875B2A79532300210E68 /* DemoSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSheetView.swift; sourceTree = "<group>"; };
+		C284875E2A79706D00210E68 /* SwiftUIViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViews.swift; sourceTree = "<group>"; };
+		C28487602A7970BB00210E68 /* SwiftUIViewPresentationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewPresentationType.swift; sourceTree = "<group>"; };
+		C28487622A7970DE00210E68 /* NSViewController+Present.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+Present.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +63,22 @@
 				C284874A2A79526600210E68 /* AppDelegate.swift */,
 				C284874C2A79526600210E68 /* ViewController.swift */,
 				C284875B2A79532300210E68 /* DemoSheetView.swift */,
+				C284875D2A79704700210E68 /* SwiftUIViews */,
 				C284874E2A79526800210E68 /* Assets.xcassets */,
 				C28487502A79526800210E68 /* Main.storyboard */,
 				C28487532A79526800210E68 /* SwiftUIViewLauncher.entitlements */,
 			);
 			path = SwiftUIViewLauncher;
+			sourceTree = "<group>";
+		};
+		C284875D2A79704700210E68 /* SwiftUIViews */ = {
+			isa = PBXGroup;
+			children = (
+				C284875E2A79706D00210E68 /* SwiftUIViews.swift */,
+				C28487602A7970BB00210E68 /* SwiftUIViewPresentationType.swift */,
+				C28487622A7970DE00210E68 /* NSViewController+Present.swift */,
+			);
+			path = SwiftUIViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +152,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C284874D2A79526600210E68 /* ViewController.swift in Sources */,
+				C28487632A7970DE00210E68 /* NSViewController+Present.swift in Sources */,
 				C284875C2A79532300210E68 /* DemoSheetView.swift in Sources */,
+				C284875F2A79706D00210E68 /* SwiftUIViews.swift in Sources */,
+				C28487612A7970BB00210E68 /* SwiftUIViewPresentationType.swift in Sources */,
 				C284874B2A79526600210E68 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

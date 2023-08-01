@@ -10,7 +10,8 @@ import Cocoa
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
   
-  
+  // Must be defined for presenting windows
+  var windows = [NSWindow]()
   
   
   func applicationDidFinishLaunching(_ aNotification: Notification) {
