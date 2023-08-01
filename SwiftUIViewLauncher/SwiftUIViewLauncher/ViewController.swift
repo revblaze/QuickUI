@@ -18,10 +18,6 @@ class ViewController: NSViewController {
   
   // MARK: Demo IBActions
   
-  @IBAction func presentDemoViewAsSheetButtonAction(_ sender: NSButton) {
-    present(.demoView, as: .sheet)
-  }
-  
   @IBAction func presentDemoViewAsWindowButtonAction(_ sender: NSButton) {
     //present(.demoView, as: .window)
     presentWindow(view: .demoView, title: "Demo Window")
@@ -29,6 +25,10 @@ class ViewController: NSViewController {
   
   @IBAction func presentDemoViewAsPopoverButtonAction(_ sender: NSButton) {
     present(.demoView, as: .popover)
+  }
+  
+  @IBAction func presentDemoViewAsSheetButtonAction(_ sender: NSButton) {
+    present(.demoView, as: .sheet)
   }
   
   
