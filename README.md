@@ -1,7 +1,13 @@
 # QuickUI
- A quick way of presenting and handling SwiftUI hosting views and controllers from within an AppKit/Cocoa environment.
+A quick way of presenting and handling SwiftUI hosting views and controllers from within an AppKit/Cocoa environment.
+
+```swift
+present(.myView, as: .window)
+present(.myView, as: .popover)
+present(.myView, as: .sheet)
+```
  
- This is simply practice at creating convenient Swift extensions, as well as making Swift syntax more Swifty.
+*This is simply practice at creating convenient Swift extensions, as well as making Swift syntax more Swifty.*
 
 ## Example Setup
 
