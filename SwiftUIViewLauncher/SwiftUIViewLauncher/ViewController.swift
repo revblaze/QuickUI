@@ -16,12 +16,11 @@ class ViewController: NSViewController {
   }
   
   override func viewDidAppear() {
-    //present(.demoView, as: .sheet)
+    
   }
   
   @IBAction func presentDemoViewAsSheetButtonAction(_ sender: NSButton) {
-    print("button clicked")
-    present(.demoSheetView, as: .sheet)
+    present(.demoView, as: .sheet)
   }
   
   
@@ -31,20 +30,24 @@ class ViewController: NSViewController {
 
 enum SwiftUIViews: String, CaseIterable {
   
-  case demoSheetView
+  case demoView
   
   var rawView: some View {
     switch self {
-    case .demoSheetView: return DemoSheetView()
+    case .demoView: return DemoView()
     }
   }
   
   var keyIdentifier: String {
-    return "\(self.rawValue)HostingControllerIdentifier"
+    return "\(self.rawValue)HostingIdentifier"
   }
   
   var hostingController: NSHostingController<AnyView> {
     return NSHostingController(rootView: AnyView(self.rawView))
+  }
+  
+  var hostingView: NSHostingView<AnyView> {
+    return NSHostingView(rootView: AnyView(self.rawView))
   }
   
 }
@@ -53,16 +56,22 @@ enum SwiftUIViews: String, CaseIterable {
 enum SwiftUIViewPresentationType {
   
   enum ViewControllerType {
-    case sheet, window, popover
+    case window, popover, sheet
   }
   
   enum WindowControllerType {
-    case window //sheet, popover?
+    case window, popover, sheet
+  }
+  
+  enum AppDelegateType {
+    case window
   }
   
 }
 
 extension NSViewController {
+  
+  func presentWindow(forView: SwiftU)
   
   func present(_ view: SwiftUIViews, as presentationType: SwiftUIViewPresentationType.ViewControllerType) {
     present(view: view, withPresentation: presentationType)
@@ -76,11 +85,21 @@ extension NSViewController {
   
   private func handlePresentation(hostingController: NSHostingController<AnyView>, presentationType: SwiftUIViewPresentationType.ViewControllerType) {
     switch presentationType {
-    case .sheet: self.presentAsSheet(hostingController)
     case .window: print("present window")
     case .popover: print("present popover")
+    case .sheet: presentHostingControllerAsSheet(hostingController: hostingController)
     }
   }
+  
+  // Present Extensions
+  private func presentHostingViewAsWindow(hostingController: NSHostingController<AnyView>) {
+    
+  }
+  
+  private func presentHostingControllerAsSheet(hostingController: NSHostingController<AnyView>) {
+    self.presentAsSheet(hostingController)
+  }
+  
   
   func dismiss(view: SwiftUIViews) {
     if let presentedViewController = self.presentedViewControllers?.first(where: { $0.identifier?.rawValue == view.keyIdentifier }) {
